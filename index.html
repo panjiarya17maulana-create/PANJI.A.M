@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panji Arya Maulana - Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#skills">SKILLS</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+        </ul>
+        <div class="logo">PANJI ARYA MAULANA</div>
+        <div class="nav-right">
+            <button class="theme-toggle" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+            <a href="#contact" class="btn-contact">Let's Talk</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="grid-bg"></div>
+        <div class="glow-circle top-right"></div>
+        <div class="glow-circle bottom-left"></div>
+
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="badge">
+                    <span class="dot"></span> MAHASISWA SISTEM INFORMASI
+                </div>
+                <h1>
+                    Building Secure <br>
+                    <span class="gradient-text">Web Solutions.</span>
+                </h1>
+                <p>
+                    Information Systems undergraduate at UPN "Veteran" East Java with a strong passion for Web
+                    Development, specializing in crafting engaging Front-End interfaces and building robust Back-End
+                    systems.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">Lihat Proyek <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#contact" class="btn btn-outline">Hubungi Saya</a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="glass-window code-window">
+                    <div class="window-header">
+                        <div class="mac-dots">
+                            <span class="mac-dot red"></span>
+                            <span class="mac-dot yellow"></span>
+                            <span class="mac-dot green"></span>
+                        </div>
+                        <span class="window-title">panji_profile.js</span>
+                    </div>
+                    <div class="window-body">
+                        <pre><code><span class="keyword">const</span> <span class="variable">developer</span> = {
+  <span class="property">name</span>: <span class="string">"Panji Arya Maulana"</span>,
+  <span class="property">role</span>: <span class="string">"Web Developer"</span>,
+  <span class="property">skills</span>: [<span class="string">"Front-End"</span>, <span class="string">"Back-End"</span>, <span class="string">"Laravel"</span>],
+  <span class="property">passion</span>: <span class="string">"Web Development"</span>,
+  <span class="property">status</span>: <span class="string">"Open to Collaborate"</span>
+};
+
+<span class="function">console</span>.<span class="method">log</span>(<span class="string">"Ready to build the future!"</span>);</code></pre>
+                    </div>
+                </div>
+                <div class="floating-badge">
+                    <div class="icon-circle"><i class="fa-solid fa-code"></i></div>
+                    <span>Web Dev Enthusiast</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-wrapper">
+            <div class="scroll-indicator">
+                <div class="line"></div>
+                <span>SCROLL TO EXPLORE</span>
+            </div>
+        </div>
+    </header>
+
+    <section id="about">
+        <h2>Tentang Saya</h2>
+        <div class="about-content">
+            <div class="about-img">
+                <!-- Ganti 'profile.jpg' dengan nama file foto Anda -->
+                <img src="foto panji.jpeg" alt="Foto Panji Arya Maulana">
+            </div>
+            <div class="about-text">
+                <p>Saya merupakan mahasiswa Sistem Informasi yang antusias dalam mengeksplorasi dunia teknologi,
+                    khususnya pengembangan perangkat lunak dan web. Berpengalaman dalam menggunakan HTML, CSS,
+                    JavaScript, serta framework seperti Laravel.</p>
+                <p>Ketertarikan utama saya terletak pada pengembangan Web secara menyeluruh (Full-Stack). Saya menikmati
+                    proses merancang antarmuka Front-End yang interaktif serta membangun arsitektur Back-End yang handal
+                    dan efisien. Selain itu, saya juga memiliki pencapaian sebagai juara lomba desain UI/UX untuk proyek
+                    website SecondLife.</p>
+                <div class="about-tags">
+                    <span class="tag">Software Engineer</span>
+                    <span class="tag">Full Stack Developer</span>
+                    <span class="tag">Mobile Developer</span>
+                    <span class="tag">UI/UX Designer</span>
+                    <span class="tag">Problem Solver</span>
+                    <span class="tag">Analytical Thinking</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="left-align-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="card-glow js-glow"></div>
+                <div class="icon-wrapper js-icon">
+                    <i class="fa-brands fa-js"></i>
+                </div>
+                <h3>JavaScript</h3>
+                <p>Web Development</p>
+            </div>
+            <div class="skill-card">
+                <div class="card-glow php-glow"></div>
+                <div class="icon-wrapper php-icon">
+                    <i class="fa-brands fa-php"></i>
+                </div>
+                <h3>PHP</h3>
+                <p>Backend Programming</p>
+            </div>
+            <div class="skill-card">
+                <div class="card-glow tw-glow"></div>
+                <div class="icon-wrapper tw-icon">
+                    <i class="fa-solid fa-wind"></i>
+                </div>
+                <h3>Tailwind CSS</h3>
+                <p>UI Design & Layout</p>
+            </div>
+            <div class="skill-card">
+                <div class="card-glow laravel-glow"></div>
+                <div class="icon-wrapper laravel-icon">
+                    <i class="fa-brands fa-laravel"></i>
+                </div>
+                <h3>Laravel</h3>
+                <p>MVC Framework</p>
+            </div>
+            <div class="skill-card">
+                <div class="card-glow mysql-glow"></div>
+                <div class="icon-wrapper mysql-icon">
+                    <i class="fa-solid fa-database"></i>
+                </div>
+                <h3>MySQL</h3>
+                <p>Database Management</p>
+            </div>
+            <div class="skill-card">
+                <div class="card-glow java-glow"></div>
+                <div class="icon-wrapper java-icon">
+                    <i class="fa-brands fa-java"></i>
+                </div>
+                <h3>Java</h3>
+                <p>OOP & Desktop App</p>
+            </div>
+            <div class="skill-card">
+                <div class="card-glow firebase-glow"></div>
+                <div class="icon-wrapper firebase-icon">
+                    <i class="fa-solid fa-fire"></i>
+                </div>
+                <h3>Firebase</h3>
+                <p>Realtime DB & Auth</p>
+            </div>
+            <div class="skill-card">
+                <div class="card-glow kotlin-glow"></div>
+                <div class="icon-wrapper kotlin-icon">
+                    <i class="fa-solid fa-k"></i>
+                </div>
+                <h3>Kotlin</h3>
+                <p>Mobile Development</p>
+            </div>
+            <div class="skill-card">
+                <div class="card-glow node-glow"></div>
+                <div class="icon-wrapper node-icon">
+                    <i class="fa-brands fa-node"></i>
+                </div>
+                <h3>Node.js</h3>
+                <p>Runtime Environment</p>
+            </div>
+            <div class="skill-card">
+                <div class="card-glow figma-glow"></div>
+                <div class="icon-wrapper figma-icon">
+                    <i class="fa-brands fa-figma"></i>
+                </div>
+                <h3>Figma</h3>
+                <p>UI/UX Prototyping</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Proyek Terbaru</h2>
+        <div class="project-cards">
+            <div class="project-card">
+                <div class="project-content">
+                    <div class="about-img">
+                        <!-- Ganti 'profile.jpg' dengan nama file foto Anda -->
+                        <img src="PROJEK 1.png" alt="Foto Panji Arya Maulana">
+                    </div>
+                    <h3>SecondLife Marketplace</h3>
+                    <p>Aplikasi marketplace barang bekas mahasiswa menggunakan Kotlin dan Supabase.</p>
+                    <a href="#" class="project-link">Lihat Detail <i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-content">
+                    <div class="about-img">
+                        <!-- Ganti 'profile.jpg' dengan nama file foto Anda -->
+                        <img src="PROJEK 1.png" alt="Foto Panji Arya Maulana">
+                    </div>
+                    <h3>Website Portfolio</h3>
+                    <p>Website portofolio pribadi dengan desain modern dan responsive, menggunakan HTML, CSS, dan
+                        JavaScript.</p>
+                    <a href="#" class="project-link">Lihat Detail <i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-content">
+                    <div class="about-img">
+                        <!-- Ganti 'profile.jpg' dengan nama file foto Anda -->
+                        <img src="PROJEK 1.png" alt="Foto Panji Arya Maulana">
+                    </div>
+                    <h3>Laravel Project</h3>
+                    <p>Website berbasis Laravel dengan fitur autentikasi dan dashboard admin.</p>
+                    <a href="#" class="project-link">Lihat Detail <i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <div class="contact-left">
+                <span class="contact-subtitle">CONTACT</span>
+                <h2>Let's build something together.</h2>
+                <p class="contact-desc">Terbuka untuk kolaborasi proyek software engineering, diskusi arsitektur sistem
+                    informasi, atau peluang magang/profesional. Hubungi saya melalui kanal pilihanmu!</p>
+
+                <div class="contact-cards">
+                    <a href="https://wa.me/6282199600742" target="_blank" class="contact-card">
+                        <div class="cc-icon wa-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                        <div class="cc-info">
+                            <span class="cc-title">WHATSAPP</span>
+                            <span class="cc-value">+62 821-9960-0742</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-right cc-arrow"></i>
+                    </a>
+
+                    <a href="mailto:maulanapanjiaryamaulana@gmail.com" class="contact-card">
+                        <div class="cc-icon email-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="cc-info">
+                            <span class="cc-title">EMAIL</span>
+                            <span class="cc-value">maulanapanjiaryamaulana@gmail.com</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-right cc-arrow"></i>
+                    </a>
+
+                    <a href="https://github.com/Panji Arya Maulana" target="_blank" class="contact-card">
+                        <div class="cc-icon github-icon"><i class="fa-brands fa-github"></i></div>
+                        <div class="cc-info">
+                            <span class="cc-title">GITHUB</span>
+                            <span class="cc-value">github.com/Panji Arya Maulana</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-right cc-arrow"></i>
+                    </a>
+
+                    <a href="https://linkedin.com/in/Panji Arya Maulana" target="_blank" class="contact-card">
+                        <div class="cc-icon linkedin-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                        <div class="cc-info">
+                            <span class="cc-title">LINKEDIN</span>
+                            <span class="cc-value">linkedin.com/in/Panji Arya Maulana</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-right cc-arrow"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-right">
+                <div class="contact-form-card">
+                    <h3>Kirim Pesan ke WhatsApp</h3>
+                    <form id="wa-form">
+                        <div class="form-group">
+                            <label for="nama">NAMA</label>
+                            <input type="text" id="nama" placeholder="Nama kamu...">
+                        </div>
+                        <div class="form-group">
+                            <label for="pesan">PESAN</label>
+                            <textarea id="pesan" rows="4" placeholder="Ada yang ingin kamu sampaikan?"></textarea>
+                        </div>
+                        <button type="button" class="btn-submit-wa" onclick="sendWA()">Kirim Pesan &rarr;</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Panji Arya Maulana. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
