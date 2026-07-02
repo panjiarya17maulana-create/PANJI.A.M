@@ -5,6 +5,7 @@
     --bg-card-hover: #f5f0ff;
     --text-primary: #1e1b4b;     /* Deep indigo for headings */
     --text-secondary: #6b7280;   /* Calm gray for body text */
+    --text-tertiary: #8b8d97;    /* Softer text for descriptions */
     --accent-1: #7c3aed;         /* Vibrant violet */
     --accent-1-hover: #6d28d9;
     --accent-2: #f97316;         /* Warm orange accent */
@@ -24,6 +25,7 @@ body[data-theme="dark"] {
     --bg-card-hover: #111827;
     --text-primary: #f8fafc;
     --text-secondary: #cbd5e1;
+    --text-tertiary: #94a3b8;    /* Visible in dark mode */
     --accent-1: #8b5cf6;
     --accent-1-hover: #7c3aed;
     --accent-2: #fb923c;
@@ -743,11 +745,13 @@ section h2::after {
     font-size: 1.15rem;
     margin-bottom: 8px;
     font-weight: 700;
+    color: var(--text-primary);
 }
 
 .skill-card p {
     font-size: 0.85rem;
-    color: var(--text-secondary);
+    color: var(--text-tertiary);
+    font-weight: 500;
 }
 
 @media (max-width: 1200px) {
