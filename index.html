@@ -28,6 +28,13 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
+<!-- Image Preview -->
+<div id="imageModal" class="image-modal">
+    <span class="close-btn" onclick="closeImage()">&times;</span>
+
+    <img id="modalImage" class="modal-content">
+
+</div>
 
 <body>
 
@@ -235,29 +242,26 @@
                 </div>
             </div>
             <div class="project-card">
-                <div class="project-content">
-                    <div class="about-img">
-                        <img src="web_panji.png" alt="Website Portofolio">
-                    </div>
-                    <h3>Website Portofolio</h3>
-                    <p>Website portofolio pribadi dengan desain modern dan responsive, menggunakan HTML, CSS, dan
-                        JavaScript.</p>
-                    <a href="#" class="project-link">Lihat Detail <i
-                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <div class="project-image">
+                    <img src="web_panji.png" alt="Website Portfolio" onclick="openImage(this.src)">
                 </div>
+                <h3>Website Portofolio</h3>
+                <p>Website portofolio pribadi dengan desain modern dan responsive, menggunakan HTML, CSS, dan
+                    JavaScript.</p>
+                <a href="#" class="project-link">Lihat Detail <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             </div>
-            <div class="project-card">
-                <div class="project-content">
-                    <div class="about-img">
-                        <!-- Ganti 'profile.jpg' dengan nama file foto Anda -->
-                        <img src="PROJEK 1.png" alt="Foto Panji Arya Maulana">
-                    </div>
-                    <h3>Laravel Project</h3>
-                    <p>Website berbasis Laravel dengan fitur autentikasi dan dashboard admin.</p>
-                    <a href="#" class="project-link">Lihat Detail <i
-                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+        <div class="project-card">
+            <div class="project-content">
+                <div class="about-img">
+                    <!-- Ganti 'profile.jpg' dengan nama file foto Anda -->
+                    <img src="PROJEK 1.png" alt="Foto Panji Arya Maulana">
                 </div>
+                <h3>Laravel Project</h3>
+                <p>Website berbasis Laravel dengan fitur autentikasi dan dashboard admin.</p>
+                <a href="#" class="project-link">Lihat Detail <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             </div>
+        </div>
         </div>
     </section>
 
