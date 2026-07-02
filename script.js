@@ -1,6 +1,42 @@
 
 console.log("Portfolio Loaded");
 
+const themeToggleButton = document.querySelector('.theme-toggle');
+const themeIcon = themeToggleButton?.querySelector('i');
+
+function applyTheme(theme) {
+    document.body.setAttribute('data-theme', theme);
+
+    if (themeToggleButton) {
+        themeToggleButton.setAttribute('data-active', theme === 'dark');
+        themeToggleButton.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+        themeToggleButton.setAttribute('aria-pressed', String(theme === 'dark'));
+    }
+
+    if (themeIcon) {
+        themeIcon.className = theme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+    }
+
+    localStorage.setItem('theme', theme);
+}
+
+function initTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+
+    applyTheme(initialTheme);
+}
+
+if (themeToggleButton) {
+    themeToggleButton.addEventListener('click', () => {
+        const currentTheme = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        applyTheme(currentTheme);
+    });
+}
+
+initTheme();
+
 function sendWA() {
     const nama = document.getElementById('nama').value;
     const pesan = document.getElementById('pesan').value;

@@ -12,6 +12,20 @@
     --code-bg: #1e1b4b;
 }
 
+body[data-theme="dark"] {
+    --bg-main: #060816;
+    --bg-nav: rgba(6, 8, 22, 0.82);
+    --bg-card: #0f172a;
+    --bg-card-hover: #111827;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --accent-1: #8b5cf6;
+    --accent-1-hover: #7c3aed;
+    --accent-2: #fb923c;
+    --border-color: rgba(148, 163, 184, 0.2);
+    --code-bg: #020617;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -25,6 +39,7 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Typography Options */
@@ -108,6 +123,20 @@ nav {
 .theme-toggle:hover {
     background: rgba(255, 255, 255, 0.05);
     color: var(--text-primary);
+}
+
+.theme-toggle[data-active="true"] {
+    background: var(--accent-1);
+    color: white;
+    border-color: transparent;
+}
+
+.theme-toggle i {
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover i {
+    transform: rotate(20deg);
 }
 
 .btn-contact {
@@ -348,7 +377,7 @@ nav {
 
 .window-body {
     padding: 24px;
-    background: #1e1b4b; /* Keep dark for code readability */
+    background: var(--code-bg);
     font-family: 'Fira Code', monospace;
     font-size: 0.9rem;
     line-height: 1.6;
