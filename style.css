@@ -10,6 +10,11 @@
     --accent-2: #f97316;         /* Warm orange accent */
     --border-color: rgba(124, 58, 237, 0.12);
     --code-bg: #1e1b4b;
+    --surface-elevated: #f8faff;
+    --surface-input: #f3f0ff;
+    --surface-input-border: rgba(124, 58, 237, 0.15);
+    --shadow-soft: rgba(124, 58, 237, 0.08);
+    --shadow-strong: rgba(124, 58, 237, 0.16);
 }
 
 body[data-theme="dark"] {
@@ -24,6 +29,11 @@ body[data-theme="dark"] {
     --accent-2: #fb923c;
     --border-color: rgba(148, 163, 184, 0.2);
     --code-bg: #020617;
+    --surface-elevated: rgba(15, 23, 42, 0.95);
+    --surface-input: rgba(15, 23, 42, 0.95);
+    --surface-input-border: rgba(148, 163, 184, 0.24);
+    --shadow-soft: rgba(2, 6, 23, 0.5);
+    --shadow-strong: rgba(2, 6, 23, 0.66);
 }
 
 * {
@@ -296,14 +306,14 @@ nav {
 }
 
 .btn-outline {
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--surface-elevated);
     color: var(--text-primary);
     border: 1px solid var(--border-color);
 }
 
 .btn-outline:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
+    background: var(--bg-card-hover);
+    border-color: var(--accent-1);
     transform: translateY(-2px);
 }
 
@@ -323,7 +333,7 @@ nav {
     border: 1px solid var(--border-color);
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 25px 50px -12px rgba(124, 58, 237, 0.2);
+    box-shadow: 0 25px 50px -12px var(--shadow-strong);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
@@ -424,7 +434,7 @@ nav {
     display: flex;
     align-items: center;
     gap: 12px;
-    box-shadow: 0 10px 25px rgba(124, 58, 237, 0.15);
+    box-shadow: 0 10px 25px var(--shadow-strong);
     backdrop-filter: blur(10px);
     animation: float 6s ease-in-out infinite;
     z-index: 10;
@@ -518,6 +528,7 @@ section h2::after {
     display: flex;
     gap: 40px;
     align-items: center;
+    box-shadow: 0 12px 30px var(--shadow-soft);
 }
 
 .about-img {
@@ -562,8 +573,8 @@ section h2::after {
 }
 
 .tag {
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--surface-elevated);
+    border: 1px solid var(--border-color);
     color: var(--text-secondary);
     padding: 10px 18px;
     border-radius: 8px;
@@ -573,9 +584,9 @@ section h2::after {
 }
 
 .tag:hover {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--bg-card-hover);
     color: var(--text-primary);
-    border-color: rgba(255, 255, 255, 0.25);
+    border-color: var(--accent-1);
 }
 
 @media (max-width: 768px) {
@@ -607,21 +618,21 @@ section h2::after {
 }
 
 .skill-card {
-    background: #ffffff;
+    background: var(--bg-card);
     border-radius: 16px;
     padding: 35px 20px 25px 20px;
     text-align: center;
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(124, 58, 237, 0.1);
-    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.06);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 15px var(--shadow-soft);
 }
 
 .skill-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(124, 58, 237, 0.18);
-    border-color: rgba(124, 58, 237, 0.3);
+    box-shadow: 0 15px 30px var(--shadow-strong);
+    border-color: var(--accent-1);
 }
 
 .card-glow {
@@ -772,12 +783,13 @@ section h2::after {
     transition: all 0.35s ease;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 10px 25px var(--shadow-soft);
 }
 
 .project-card:hover {
     transform: translateY(-8px);
     border-color: var(--accent-2);
-    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 18px 35px var(--shadow-strong);
 }
 
 .project-image {
@@ -886,21 +898,21 @@ section h2::after {
 .contact-card {
     display: flex;
     align-items: center;
-    background: #ffffff;
-    border: 1px solid rgba(124, 58, 237, 0.1);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 20px 24px;
     text-decoration: none;
     color: var(--text-primary);
     transition: all 0.3s ease;
-    box-shadow: 0 2px 10px rgba(124, 58, 237, 0.06);
+    box-shadow: 0 2px 10px var(--shadow-soft);
 }
 
 .contact-card:hover {
     background: var(--bg-card-hover);
-    border-color: rgba(124, 58, 237, 0.3);
+    border-color: var(--accent-1);
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.15);
+    box-shadow: 0 8px 20px var(--shadow-strong);
 }
 
 .cc-icon {
@@ -972,11 +984,11 @@ section h2::after {
 }
 
 .contact-form-card {
-    background: #ffffff;
-    border: 1px solid rgba(124, 58, 237, 0.1);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
     border-radius: 20px;
     padding: 40px;
-    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.08);
+    box-shadow: 0 4px 20px var(--shadow-soft);
 }
 
 .contact-form-card h3 {
@@ -1001,14 +1013,19 @@ section h2::after {
 
 .form-group input,
 .form-group textarea {
-    background: #f3f0ff;
-    border: 1px solid rgba(124, 58, 237, 0.15);
+    background: var(--surface-input);
+    border: 1px solid var(--surface-input-border);
     border-radius: 8px;
     padding: 16px;
     color: var(--text-primary);
     font-family: inherit;
     font-size: 1rem;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--text-secondary);
 }
 
 .form-group input:focus,
