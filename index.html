@@ -4,45 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panji Arya Maulana - Website</title>
+    <meta name="description" content="Portofolio Panji Arya Maulana — Web Developer & Mahasiswa Sistem Informasi UPN Veteran Jawa Timur.">
+    <title>Panji Arya Maulana — Portofolio</title>
 
     <link rel="icon" type="image/png" href="logo-panji-web.png">
 
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panji Arya Maulana - portofolio</title>
-
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;700;800&family=Fira+Code:wght@400;500&display=swap"
         rel="stylesheet">
 
-    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <link rel="stylesheet" href="style.css">
 </head>
-<!-- Image Preview -->
-<div id="imageModal" class="image-modal">
-    <span class="close-btn" onclick="closeImage()">&times;</span>
-
-    <img id="modalImage" class="modal-content">
-
-</div>
 
 <body>
 
+    <div id="scrollProgress" class="scroll-progress" aria-hidden="true"></div>
+
+    <div id="imageModal" class="image-modal">
+        <span class="close-btn" onclick="closeImage()">&times;</span>
+        <img id="modalImage" class="modal-content" alt="Preview proyek">
+    </div>
+
     <nav>
+        <button class="menu-toggle" aria-label="Buka menu navigasi" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
         <ul class="nav-links">
-            <li><a href="#about">ABOUT</a></li>
-            <li><a href="#skills">SKILLS</a></li>
-            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#about" class="nav-link">ABOUT</a></li>
+            <li><a href="#experience" class="nav-link">EXPERIENCE</a></li>
+            <li><a href="#skills" class="nav-link">SKILLS</a></li>
+            <li><a href="#projects" class="nav-link">PROJECTS</a></li>
         </ul>
         <div class="logo">PANJI ARYA MAULANA</div>
         <div class="nav-right">
@@ -59,11 +53,11 @@
         <div class="hero-container">
             <div class="hero-content">
                 <div class="badge">
-                    <span class="dot"></span> MAHASISWA SISTEM INFORMASI
+                    <span class="dot pulse-dot"></span> MAHASISWA SISTEM INFORMASI
                 </div>
                 <h1>
                     Building Secure <br>
-                    <span class="gradient-text">Web Solutions.</span>
+                    <span class="gradient-text" id="typedText">Web Solutions.</span>
                 </h1>
                 <p>
                     Information Systems undergraduate at UPN "Veteran" East Java with a strong passion for Web
@@ -113,11 +107,32 @@
         </div>
     </header>
 
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-card reveal">
+                <span class="stat-number" data-target="10">0</span>
+                <span class="stat-label">Teknologi Dikuasai</span>
+            </div>
+            <div class="stat-card reveal">
+                <span class="stat-number" data-target="3">0</span>
+                <span class="stat-label">Proyek Selesai</span>
+            </div>
+            <div class="stat-card reveal">
+                <span class="stat-number" data-target="1">0</span>
+                <span class="stat-label">Penghargaan UI/UX</span>
+            </div>
+            <div class="stat-card reveal">
+                <span class="stat-number" data-target="100">0</span>
+                <span class="stat-suffix">%</span>
+                <span class="stat-label">Semangat Belajar</span>
+            </div>
+        </div>
+    </section>
+
     <section id="about">
-        <h2>Tentang Saya</h2>
-        <div class="about-content">
+        <h2 class="reveal">Tentang Saya</h2>
+        <div class="about-content reveal">
             <div class="about-img">
-                <!-- Ganti 'profile.jpg' dengan nama file foto Anda -->
                 <img src="foto panji.jpeg" alt="Foto Panji Arya Maulana">
             </div>
             <div class="about-text">
@@ -140,101 +155,173 @@
         </div>
     </section>
 
+    <section id="experience">
+        <h2 class="reveal">Perjalanan & Pencapaian</h2>
+        <div class="timeline">
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2023 — Sekarang</span>
+                    <h3>Sistem Informasi — UPN "Veteran" Jawa Timur</h3>
+                    <p>Fokus pada pengembangan perangkat lunak, arsitektur sistem informasi, dan web development full-stack.</p>
+                    <div class="timeline-tags">
+                        <span>Web Dev</span><span>Database</span><span>UI/UX</span>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot highlight"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2025</span>
+                    <h3>Juara Lomba Desain UI/UX — CERIA+</h3>
+                    <p>Aplikasi untuk mengontrol anak disabilitas yang masih ditingkat rendah dan dipantau melalui Handphone.</p>
+                    <div class="timeline-tags">
+                        <span>Figma</span><span>UI/UX</span><span>Prototyping</span>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2024 — 2025</span>
+                    <h3>Pengembangan Proyek Full-Stack</h3>
+                    <p>Membangun aplikasi marketplace (Kotlin + Supabase), website Laravel dengan autentikasi, dan portofolio pribadi.</p>
+                    <div class="timeline-tags">
+                        <span>Laravel</span><span>Kotlin</span><span>JavaScript</span>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot highlight"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2026</span>
+                    <h3>Penulis & Presenter Paper — SITASI 2026</h3>
+                    <p>Menulis dan mempresentasikan paper dengan judul <strong>"Perancangan SecondLife Marketplace Preloved Mendukung SDGs 8"</strong> pada Seminar Ilmiah Teknologi dan Sistem Informasi (SITASI) 2026.</p>
+                    <div class="timeline-tags">
+                        <span>Research</span><span>SDGs 8</span><span>Marketplace</span><span>Presentation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="skills">
-        <h2 class="left-align-title">Technical Skills</h2>
+        <h2 class="left-align-title reveal">Technical Skills</h2>
         <div class="skills-grid">
-            <div class="skill-card">
+            <div class="skill-card reveal">
                 <div class="card-glow js-glow"></div>
                 <div class="icon-wrapper js-icon">
                     <i class="fa-brands fa-js"></i>
                 </div>
                 <h3>JavaScript</h3>
                 <p>Web Development</p>
+                <div class="skill-bar"><div class="skill-fill" data-level="85"></div></div>
             </div>
-            <div class="skill-card">
+            <div class="skill-card reveal">
                 <div class="card-glow php-glow"></div>
                 <div class="icon-wrapper php-icon">
                     <i class="fa-brands fa-php"></i>
                 </div>
                 <h3>PHP</h3>
                 <p>Backend Programming</p>
+                <div class="skill-bar"><div class="skill-fill" data-level="80"></div></div>
             </div>
-            <div class="skill-card">
+            <div class="skill-card reveal">
                 <div class="card-glow tw-glow"></div>
                 <div class="icon-wrapper tw-icon">
                     <i class="fa-solid fa-wind"></i>
                 </div>
                 <h3>Tailwind CSS</h3>
                 <p>UI Design & Layout</p>
+                <div class="skill-bar"><div class="skill-fill" data-level="88"></div></div>
             </div>
-            <div class="skill-card">
+            <div class="skill-card reveal">
                 <div class="card-glow laravel-glow"></div>
                 <div class="icon-wrapper laravel-icon">
                     <i class="fa-brands fa-laravel"></i>
                 </div>
                 <h3>Laravel</h3>
                 <p>MVC Framework</p>
+                <div class="skill-bar"><div class="skill-fill" data-level="82"></div></div>
             </div>
-            <div class="skill-card">
+            <div class="skill-card reveal">
                 <div class="card-glow mysql-glow"></div>
                 <div class="icon-wrapper mysql-icon">
                     <i class="fa-solid fa-database"></i>
                 </div>
                 <h3>MySQL</h3>
                 <p>Database Management</p>
+                <div class="skill-bar"><div class="skill-fill" data-level="78"></div></div>
             </div>
-            <div class="skill-card">
+            <div class="skill-card reveal">
                 <div class="card-glow java-glow"></div>
                 <div class="icon-wrapper java-icon">
                     <i class="fa-brands fa-java"></i>
                 </div>
                 <h3>Java</h3>
                 <p>OOP & Desktop App</p>
+                <div class="skill-bar"><div class="skill-fill" data-level="75"></div></div>
             </div>
-            <div class="skill-card">
+            <div class="skill-card reveal">
                 <div class="card-glow firebase-glow"></div>
                 <div class="icon-wrapper firebase-icon">
                     <i class="fa-solid fa-fire"></i>
                 </div>
                 <h3>Firebase</h3>
                 <p>Realtime DB & Auth</p>
+                <div class="skill-bar"><div class="skill-fill" data-level="70"></div></div>
             </div>
-            <div class="skill-card">
+            <div class="skill-card reveal">
                 <div class="card-glow kotlin-glow"></div>
                 <div class="icon-wrapper kotlin-icon">
                     <i class="fa-solid fa-k"></i>
                 </div>
                 <h3>Kotlin</h3>
                 <p>Mobile Development</p>
+                <div class="skill-bar"><div class="skill-fill" data-level="72"></div></div>
             </div>
-            <div class="skill-card">
+            <div class="skill-card reveal">
                 <div class="card-glow node-glow"></div>
                 <div class="icon-wrapper node-icon">
                     <i class="fa-brands fa-node"></i>
                 </div>
                 <h3>Node.js</h3>
                 <p>Runtime Environment</p>
+                <div class="skill-bar"><div class="skill-fill" data-level="68"></div></div>
             </div>
-            <div class="skill-card">
+            <div class="skill-card reveal">
                 <div class="card-glow figma-glow"></div>
                 <div class="icon-wrapper figma-icon">
                     <i class="fa-brands fa-figma"></i>
                 </div>
                 <h3>Figma</h3>
                 <p>UI/UX Prototyping</p>
+                <div class="skill-bar"><div class="skill-fill" data-level="90"></div></div>
             </div>
         </div>
     </section>
 
     <section id="projects">
-        <h2>Proyek Terbaru</h2>
+        <h2 class="reveal">Proyek Terbaru</h2>
+        <div class="project-filter reveal">
+            <button class="filter-btn active" data-filter="all">Semua</button>
+            <button class="filter-btn" data-filter="mobile">Mobile</button>
+            <button class="filter-btn" data-filter="web">Web</button>
+            <button class="filter-btn" data-filter="backend">Backend</button>
+        </div>
         <div class="project-cards">
 
-            <div class="project-card">
+            <div class="project-card reveal" data-category="mobile">
                 <div class="project-image">
                     <img src="PROJEK 1.png" alt="SecondLife Marketplace" onclick="openImage(this.src)">
+                    <div class="project-overlay">
+                        <button class="overlay-btn" onclick="openImage('PROJEK 1.png')"><i class="fa-solid fa-expand"></i></button>
+                    </div>
                 </div>
                 <div class="project-content">
+                    <div class="project-tech">
+                        <span>Kotlin</span><span>Supabase</span><span>UI/UX</span>
+                    </div>
                     <h3>SecondLife Marketplace</h3>
                     <p>Aplikasi marketplace barang bekas mahasiswa menggunakan Kotlin dan Supabase.</p>
                     <a href="javascript:void(0)" class="project-link" onclick="openImage('PROJEK 1.png')">
@@ -243,25 +330,36 @@
                 </div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card reveal" data-category="web">
                 <div class="project-image">
                     <img src="web_panji.png" alt="Website Portofolio" onclick="openImage(this.src)">
+                    <div class="project-overlay">
+                        <button class="overlay-btn" onclick="openImage('web_panji.png')"><i class="fa-solid fa-expand"></i></button>
+                    </div>
                 </div>
                 <div class="project-content">
+                    <div class="project-tech">
+                        <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                    </div>
                     <h3>Website Portofolio</h3>
-                    <p>Website portofolio pribadi dengan desain modern dan responsive, menggunakan HTML, CSS, dan
-                        JavaScript.</p>
+                    <p>Website portofolio pribadi dengan desain modern dan responsive, menggunakan HTML, CSS, dan JavaScript.</p>
                     <a href="javascript:void(0)" class="project-link" onclick="openImage('web_panji.png')">
                         Lihat Detail <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </a>
                 </div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card reveal" data-category="backend web">
                 <div class="project-image">
                     <img src="PROJEK 1.png" alt="Laravel Project" onclick="openImage(this.src)">
+                    <div class="project-overlay">
+                        <button class="overlay-btn" onclick="openImage('PROJEK 1.png')"><i class="fa-solid fa-expand"></i></button>
+                    </div>
                 </div>
                 <div class="project-content">
+                    <div class="project-tech">
+                        <span>Laravel</span><span>PHP</span><span>MySQL</span>
+                    </div>
                     <h3>Laravel Project</h3>
                     <p>Website berbasis Laravel dengan fitur autentikasi dan dashboard admin yang lengkap.</p>
                     <a href="javascript:void(0)" class="project-link" onclick="openImage('PROJEK 1.png')">
@@ -275,14 +373,14 @@
 
     <section id="contact" class="contact-section">
         <div class="contact-container">
-            <div class="contact-left">
+            <div class="contact-left reveal">
                 <span class="contact-subtitle">CONTACT</span>
                 <h2>Let's build something together.</h2>
                 <p class="contact-desc">Terbuka untuk kolaborasi proyek software engineering, diskusi arsitektur sistem
                     informasi, atau peluang magang/profesional. Hubungi saya melalui kanal pilihanmu!</p>
 
                 <div class="contact-cards">
-                    <a href="https://wa.me/6282199600742" target="_blank" class="contact-card">
+                    <a href="https://wa.me/6282199600742" target="_blank" rel="noopener noreferrer" class="contact-card">
                         <div class="cc-icon wa-icon"><i class="fa-brands fa-whatsapp"></i></div>
                         <div class="cc-info">
                             <span class="cc-title">WHATSAPP</span>
@@ -300,7 +398,7 @@
                         <i class="fa-solid fa-arrow-right cc-arrow"></i>
                     </a>
 
-                    <a href="https://github.com/panjiarya17maulana-create" target="_blank" class="contact-card">
+                    <a href="https://github.com/panjiarya17maulana-create" target="_blank" rel="noopener noreferrer" class="contact-card">
                         <div class="cc-icon github-icon"><i class="fa-brands fa-github"></i></div>
                         <div class="cc-info">
                             <span class="cc-title">GITHUB</span>
@@ -309,7 +407,7 @@
                         <i class="fa-solid fa-arrow-right cc-arrow"></i>
                     </a>
 
-                    <a href="https://linkedin.com/in/panji-arya-maulana" target="_blank" class="contact-card">
+                    <a href="https://linkedin.com/in/panji-arya-maulana" target="_blank" rel="noopener noreferrer" class="contact-card">
                         <div class="cc-icon linkedin-icon"><i class="fa-brands fa-linkedin-in"></i></div>
                         <div class="cc-info">
                             <span class="cc-title">LINKEDIN</span>
@@ -320,10 +418,10 @@
                 </div>
             </div>
 
-            <div class="contact-right">
+            <div class="contact-right reveal">
                 <div class="contact-form-card">
                     <h3>Kirim Pesan ke WhatsApp</h3>
-                    <form id="wa-form">
+                    <form id="wa-form" onsubmit="return false;">
                         <div class="form-group">
                             <label for="nama">NAMA</label>
                             <input type="text" id="nama" placeholder="Nama kamu...">
@@ -340,8 +438,19 @@
     </section>
 
     <footer>
-        <p>© 2026 Panji Arya Maulana. All rights reserved.</p>
+        <div class="footer-content">
+            <p>© 2026 Panji Arya Maulana. All rights reserved.</p>
+            <div class="footer-social">
+                <a href="https://github.com/panjiarya17maulana-create" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com/in/panji-arya-maulana" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://wa.me/6282199600742" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
     </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Kembali ke atas">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>
