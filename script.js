@@ -1,4 +1,3 @@
-
 console.log("Portfolio Loaded");
 
 /* ── Theme Toggle ── */
@@ -36,9 +35,9 @@ if (themeToggleButton) {
 
 initTheme();
 
-/* ── Email Form ── */
-const SUPABASE_URL = 'https://ISI-PROJECT-URL-KAMU.supabase.co';
-const SUPABASE_ANON_KEY = 'sb_publishable_ISI-PUBLISHABLE-KEY-KAMU';
+/* ── Contact Form (Supabase) ── */
+const SUPABASE_URL = 'https://azbleaxqsmxznuicbnii.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_LXxPRqpBxGqLVAfst9CALg_LxZ1vSln';
 
 const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
