@@ -4,6 +4,8 @@ console.log("Portfolio Loaded");
 /* ── Theme Toggle ── */
 const themeToggleButton = document.querySelector('.theme-toggle');
 const themeIcon = themeToggleButton?.querySelector('i');
+const SUPABASE_URL = 'TEMPEL_PROJECT_URL_DISINI';
+const SUPABASE_ANON_KEY = 'TEMPEL_ANON_PUBLIC_KEY_DISINI';
 
 function applyTheme(theme) {
     document.body.setAttribute('data-theme', theme);
@@ -36,18 +38,21 @@ if (themeToggleButton) {
 
 initTheme();
 
-/* ── WhatsApp Form ── */
-function sendWA() {
-    const nama = document.getElementById('nama').value.trim();
-    const pesan = document.getElementById('pesan').value.trim();
+/* ── Email Form ── */
+function sendEmail() {
+    const nama = document.getElementById("nama").value.trim();
+    const pesan = document.getElementById("pesan").value.trim();
 
     if (!nama || !pesan) {
-        alert("Mohon isi nama dan pesan Anda.");
+        alert("Harap isi nama dan pesan terlebih dahulu!");
         return;
     }
 
-    const text = `Halo, nama saya ${nama}.%0A%0A${pesan}`;
-    window.open(`https://wa.me/6282199600742?text=${text}`, '_blank');
+    const emailTujuan = "maulanapanjiaryamaulana@gmail.com";
+    const subject = encodeURIComponent(`Pesan Portofolio dari ${nama}`);
+    const body = encodeURIComponent(`Halo Panji,\n\nNama: ${nama}\n\nPesan:\n${pesan}`);
+
+    window.location.href = `mailto:${emailTujuan}?subject=${subject}&body=${body}`;
 }
 
 /* ── Image Modal ── */
