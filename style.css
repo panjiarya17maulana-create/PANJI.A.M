@@ -422,6 +422,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 64px;
 }
 
 .glass-window {
@@ -494,7 +495,7 @@ nav {
 
 .floating-badge {
     position: absolute;
-    bottom: -20px;
+    bottom: -64px;
     right: 20px;
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -1769,7 +1770,7 @@ footer {
 
     .floating-badge {
         right: 8px;
-        bottom: -18px;
+        bottom: -64px;
         font-size: 0.72rem;
     }
 
