@@ -4,8 +4,6 @@ console.log("Portfolio Loaded");
 /* ── Theme Toggle ── */
 const themeToggleButton = document.querySelector('.theme-toggle');
 const themeIcon = themeToggleButton?.querySelector('i');
-const SUPABASE_URL = 'TEMPEL_PROJECT_URL_DISINI';
-const SUPABASE_ANON_KEY = 'TEMPEL_ANON_PUBLIC_KEY_DISINI';
 
 function applyTheme(theme) {
     document.body.setAttribute('data-theme', theme);
@@ -39,20 +37,46 @@ if (themeToggleButton) {
 initTheme();
 
 /* ── Email Form ── */
-function sendEmail() {
-    const nama = document.getElementById("nama").value.trim();
-    const pesan = document.getElementById("pesan").value.trim();
+const SUPABASE_URL = 'https://ISI-PROJECT-URL-KAMU.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_ISI-PUBLISHABLE-KEY-KAMU';
 
-    if (!nama || !pesan) {
-        alert("Harap isi nama dan pesan terlebih dahulu!");
-        return;
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+async function kirimPesanSupabase(event) {
+    event.preventDefault();
+
+    const namaInput = document.getElementById('nama');
+    const pesanInput = document.getElementById('pesan');
+    const btnSubmit = document.getElementById('btn-submit');
+    const statusText = document.getElementById('form-status');
+
+    const nama = namaInput.value.trim();
+    const pesan = pesanInput.value.trim();
+
+    if (!nama || !pesan) return;
+
+    btnSubmit.disabled = true;
+    btnSubmit.innerHTML = 'Mengirim...';
+    statusText.textContent = '';
+    statusText.className = 'form-status';
+
+    const { error } = await supabaseClient
+        .from('pesan_kontak')
+        .insert([{ nama: nama, pesan: pesan }]);
+
+    if (error) {
+        console.error('Supabase Error:', error);
+        statusText.textContent = 'Gagal mengirim pesan. Silakan coba lagi.';
+        statusText.classList.add('error');
+    } else {
+        statusText.textContent = 'Terima kasih! Pesan kamu sudah terkirim.';
+        statusText.classList.add('success');
+        namaInput.value = '';
+        pesanInput.value = '';
     }
 
-    const emailTujuan = "maulanapanjiaryamaulana@gmail.com";
-    const subject = encodeURIComponent(`Pesan Portofolio dari ${nama}`);
-    const body = encodeURIComponent(`Halo Panji,\n\nNama: ${nama}\n\nPesan:\n${pesan}`);
-
-    window.location.href = `mailto:${emailTujuan}?subject=${subject}&body=${body}`;
+    btnSubmit.disabled = false;
+    btnSubmit.innerHTML = 'Kirim Pesan &rarr;';
 }
 
 /* ── Image Modal ── */

@@ -420,17 +420,18 @@
 
             <div class="contact-right reveal">
             <div class="contact-form-card">
-                <h3>Kirim Pesan ke Email</h3>
-                <form id="contact-form" onsubmit="return false;">
+                <h3>Kirim Pesan Langsung</h3>
+                <form id="contact-form" onsubmit="kirimPesanSupabase(event)">
                     <div class="form-group">
                         <label for="nama">NAMA</label>
-                        <input type="text" id="nama" placeholder="Nama kamu...">
+                        <input type="text" id="nama" placeholder="Nama kamu..." required>
                     </div>
                     <div class="form-group">
                         <label for="pesan">PESAN</label>
-                        <textarea id="pesan" rows="4" placeholder="Ada yang ingin kamu sampaikan?"></textarea>
+                        <textarea id="pesan" rows="4" placeholder="Ada yang ingin kamu sampaikan?" required></textarea>
                     </div>
-                    <button type="button" class="btn-submit-wa" onclick="sendEmail()">Kirim Pesan &rarr;</button>
+                    <button type="submit" id="btn-submit" class="btn-submit-wa">Kirim Pesan &rarr;</button>
+                    <p id="form-status" class="form-status"></p>
                 </form>
             </div>
         </div>
@@ -451,6 +452,10 @@
     <button id="backToTop" class="back-to-top" aria-label="Kembali ke atas">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+</body>
 
     <script src="script.js"></script>
 </body>
