@@ -45,23 +45,27 @@ async function kirimPesanSupabase(event) {
     event.preventDefault();
 
     const namaInput = document.getElementById('nama');
+    const emailInput = document.getElementById('email');
+    const subjekInput = document.getElementById('subjek');
     const pesanInput = document.getElementById('pesan');
     const btnSubmit = document.getElementById('btn-submit');
     const statusText = document.getElementById('form-status');
 
     const nama = namaInput.value.trim();
+    const email = emailInput.value.trim();
+    const subjek = subjekInput.value.trim();
     const pesan = pesanInput.value.trim();
 
-    if (!nama || !pesan) return;
+    if (!nama || !email || !subjek || !pesan) return;
 
     btnSubmit.disabled = true;
-    btnSubmit.innerHTML = 'Mengirim...';
+    btnSubmit.textContent = 'Sending...';
     statusText.textContent = '';
     statusText.className = 'form-status';
 
     const { error } = await supabaseClient
         .from('pesan_kontak')
-        .insert([{ nama: nama, pesan: pesan }]);
+        .insert([{ nama: nama, email: email, subjek: subjek, pesan: pesan }]);
 
     if (error) {
         console.error('Supabase Error:', error);
@@ -71,11 +75,13 @@ async function kirimPesanSupabase(event) {
         statusText.textContent = 'Terima kasih! Pesan kamu sudah terkirim.';
         statusText.classList.add('success');
         namaInput.value = '';
+        emailInput.value = '';
+        subjekInput.value = '';
         pesanInput.value = '';
     }
 
     btnSubmit.disabled = false;
-    btnSubmit.innerHTML = 'Kirim Pesan &rarr;';
+    btnSubmit.textContent = 'Submit Form';
 }
 
 /* ── Image Modal ── */

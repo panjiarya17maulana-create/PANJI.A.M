@@ -424,19 +424,27 @@
                 </div>
             </div>
 
-            <div class="contact-right reveal">
+           <div class="contact-right reveal">
                 <div class="contact-form-card">
                     <h3>Kirim Pesan Langsung</h3>
                     <form id="contact-form" onsubmit="kirimPesanSupabase(event)">
                         <div class="form-group">
-                            <label for="nama">NAMA</label>
-                            <input type="text" id="nama" placeholder="Nama kamu..." required>
+                            <label for="nama">Name</label>
+                            <input type="text" id="nama" placeholder="Your name" required>
                         </div>
                         <div class="form-group">
-                            <label for="pesan">PESAN</label>
-                            <textarea id="pesan" rows="4" placeholder="Ada yang ingin kamu sampaikan?" required></textarea>
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="youremail@example.com" required>
                         </div>
-                        <button type="submit" id="btn-submit" class="btn-submit-wa">Kirim Pesan &rarr;</button>
+                        <div class="form-group">
+                            <label for="subjek">Subject</label>
+                            <input type="text" id="subjek" placeholder="Your subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pesan">Message</label>
+                            <textarea id="pesan" rows="4" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" id="btn-submit" class="btn-submit-wa">Submit Form</button>
                         <p id="form-status" class="form-status"></p>
                     </form>
                 </div>
