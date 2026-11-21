@@ -1679,3 +1679,260 @@ footer {
     }
 
 }
+
+@media (max-width: 480px) {
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    nav {
+        padding: 14px 5%;
+    }
+
+    .menu-toggle {
+        padding: 7px 8px;
+    }
+
+    .logo {
+        max-width: 190px;
+        font-size: 0.78rem;
+        letter-spacing: 1px;
+        text-align: center;
+        line-height: 1.25;
+    }
+
+    .nav-right {
+        gap: 8px;
+    }
+
+    .theme-toggle {
+        width: 36px;
+        height: 36px;
+    }
+
+    .btn-contact {
+        display: none;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 110px 5% 70px;
+    }
+
+    .hero-container {
+        gap: 36px;
+    }
+
+    .badge {
+        max-width: 100%;
+        font-size: 0.66rem;
+        padding: 6px 10px;
+        letter-spacing: 0.5px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: clamp(2rem, 10vw, 2.35rem);
+        line-height: 1.12;
+        margin-bottom: 18px;
+        letter-spacing: -0.8px;
+    }
+
+    .hero p {
+        font-size: 0.92rem;
+        line-height: 1.65;
+        margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+        gap: 10px;
+        margin-bottom: 0;
+    }
+
+    .hero-buttons .btn {
+        min-height: 48px;
+        padding: 12px 16px;
+    }
+
+    .window-body {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .window-body pre {
+        min-width: 290px;
+        font-size: 0.72rem;
+    }
+
+    .floating-badge {
+        right: 8px;
+        bottom: -18px;
+        font-size: 0.72rem;
+    }
+
+    .scroll-wrapper {
+        display: none;
+    }
+
+    section,
+    .stats-section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    section h2 {
+        font-size: 1.85rem;
+        margin-bottom: 36px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .stat-card {
+        padding: 22px 10px;
+        border-radius: 12px;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 0.72rem;
+    }
+
+    .about-content {
+        padding: 24px 18px;
+        gap: 24px;
+    }
+
+    .about-img {
+        width: min(180px, 70vw);
+        height: min(180px, 70vw);
+    }
+
+    .about-text p {
+        font-size: 0.92rem;
+    }
+
+    .about-tags {
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .tag {
+        font-size: 0.78rem;
+        padding: 8px 10px;
+    }
+
+    .timeline {
+        padding-left: 24px;
+    }
+
+    .timeline::before {
+        left: 6px;
+    }
+
+    .timeline-dot {
+        left: -24px;
+    }
+
+    .timeline-content {
+        padding: 22px 18px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .skill-card {
+        padding: 24px 10px 20px;
+    }
+
+    .icon-wrapper {
+        width: 64px;
+        height: 64px;
+        font-size: 2.2rem;
+    }
+
+    .skill-card h3 {
+        font-size: 0.95rem;
+    }
+
+    .skill-card p {
+        font-size: 0.75rem;
+    }
+
+    .project-filter {
+        gap: 8px;
+    }
+
+    .filter-btn {
+        padding: 8px 12px;
+        font-size: 0.78rem;
+    }
+
+    .project-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .project-image {
+        height: 190px;
+    }
+
+    .project-body {
+        padding: 20px 18px;
+    }
+
+    .contact-container {
+        gap: 30px;
+        padding-top: 36px;
+    }
+
+    .contact-left h2 {
+        font-size: 2.15rem;
+    }
+
+    .contact-desc {
+        font-size: 0.95rem;
+    }
+
+    .contact-card {
+        padding: 15px 12px;
+    }
+
+    .cc-icon {
+        width: 42px;
+        height: 42px;
+        margin-right: 12px;
+    }
+
+    .cc-value {
+        font-size: 0.82rem;
+    }
+
+    .cc-arrow {
+        margin-left: 6px;
+    }
+
+    .contact-form-card {
+        padding: 24px 18px;
+        border-radius: 14px;
+    }
+
+    .contact-form-card h3 {
+        font-size: 1.25rem;
+    }
+
+    .footer-content {
+        padding: 0 5%;
+        text-align: center;
+    }
+}
