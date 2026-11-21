@@ -78,7 +78,7 @@ async function kirimPesanSupabase(event) {
     btnSubmit.innerHTML = 'Kirim Pesan &rarr;';
 }
 
-/* ── Image & PDF Modal ── */
+/* ── Image Modal ── */
 function openImage(src) {
     document.getElementById('imageModal').style.display = 'flex';
     document.getElementById('modalImage').src = src;
@@ -88,37 +88,13 @@ function closeImage() {
     document.getElementById('imageModal').style.display = 'none';
 }
 
-function openPdf(src) {
-    const pdfModal = document.getElementById('pdfModal');
-    const modalPdf = document.getElementById('modalPdf');
-    const fallbackLink = document.getElementById('pdfFallbackLink');
-
-    modalPdf.src = src;
-    if (fallbackLink) fallbackLink.href = src;
-    pdfModal.style.display = 'flex';
-}
-
-function closePdf() {
-    const pdfModal = document.getElementById('pdfModal');
-    const modalPdf = document.getElementById('modalPdf');
-
-    pdfModal.style.display = 'none';
-    modalPdf.src = '';
-}
-
 window.addEventListener('click', (event) => {
-    const imageModal = document.getElementById('imageModal');
-    const pdfModal = document.getElementById('pdfModal');
-
-    if (event.target === imageModal) closeImage();
-    if (event.target === pdfModal) closePdf();
+    const modal = document.getElementById('imageModal');
+    if (event.target === modal) closeImage();
 });
 
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        closeImage();
-        closePdf();
-    }
+    if (e.key === 'Escape') closeImage();
 });
 
 /* ── Typing Effect ── */
