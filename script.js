@@ -94,13 +94,197 @@ function closeImage() {
     document.getElementById('imageModal').style.display = 'none';
 }
 
+/* ── Skill Detail Modal ── */
+const skillsData = {
+    javascript: {
+        title: 'JavaScript',
+        badge: 'LANGUAGE & WEB',
+        iconClass: 'js-icon',
+        iconHtml: '<i class="fa-brands fa-js"></i>',
+        level: 85,
+        description: 'Bahasa pemrograman utama untuk membangun interaktivitas halaman web modern, manipulasi DOM, event handling, serta integrasi data asynchronous dengan API maupun backend seperti Supabase.',
+        useCases: [
+            'Membangun interaksi dinamis, filter proyek, modal preview, dan validasi form di web portofolio',
+            'Menghubungkan form kontak & aplikasi web langsung ke database Supabase secara realtime'
+        ]
+    },
+    php: {
+        title: 'PHP',
+        badge: 'BACKEND LANGUAGE',
+        iconClass: 'php-icon',
+        iconHtml: '<i class="fa-brands fa-php"></i>',
+        level: 80,
+        description: 'Bahasa pemrograman sisi server yang banyak digunakan untuk pengembangan aplikasi web dinamis, pengelolaan autentikasi pengguna, logika bisnis, serta pemrosesan data terhubung basis data.',
+        useCases: [
+            'Mengembangkan logika backend aplikasi web dan manajemen data berbasis form',
+            'Menjadi fondasi utama pengembangan aplikasi berbasis framework Laravel'
+        ]
+    },
+    tailwind: {
+        title: 'Tailwind CSS',
+        badge: 'CSS FRAMEWORK',
+        iconClass: 'tw-icon',
+        iconHtml: '<i class="fa-solid fa-wind"></i>',
+        level: 88,
+        description: 'Framework CSS utility-first yang mempercepat pembuatan antarmuka responsif, konsisten, dan modern langsung di markup tanpa harus menulis banyak aturan CSS terpisah.',
+        useCases: [
+            'Menyusun layout responsif mobile-first dengan spacing, warna, dan tipografi yang konsisten',
+            'Mempercepat pembuatan kartu, navbar, dan komponen UI modern'
+        ]
+    },
+    laravel: {
+        title: 'Laravel',
+        badge: 'PHP MVC FRAMEWORK',
+        iconClass: 'laravel-icon',
+        iconHtml: '<i class="fa-brands fa-laravel"></i>',
+        level: 82,
+        description: 'Framework PHP berarsitektur MVC (Model-View-Controller) yang menyediakan struktur rapi untuk routing, autentikasi, ORM Eloquent, validasi, serta pengelolaan dashboard aplikasi web.',
+        useCases: [
+            'Membangun aplikasi web terstruktur dengan sistem autentikasi dan hak akses pengguna',
+            'Mengelola data CRUD serta panel admin secara efisien'
+        ]
+    },
+    mysql: {
+        title: 'MySQL',
+        badge: 'RELATIONAL DATABASE',
+        iconClass: 'mysql-icon',
+        iconHtml: '<i class="fa-solid fa-database"></i>',
+        level: 78,
+        description: 'Sistem manajemen basis data relasional (RDBMS) untuk merancang skema tabel, relasi antar entitas, query SQL, serta menyimpan data aplikasi secara terstruktur dan aman.',
+        useCases: [
+            'Merancang tabel dan relasi data untuk aplikasi web serta sistem informasi',
+            'Melakukan query penyimpanan, pembaruan, dan pengambilan data terstruktur'
+        ]
+    },
+    java: {
+        title: 'Java',
+        badge: 'OOP & DESKTOP',
+        iconClass: 'java-icon',
+        iconHtml: '<i class="fa-brands fa-java"></i>',
+        level: 75,
+        description: 'Bahasa pemrograman berorientasi objek (OOP) yang kuat untuk melatih struktur kode modular, pewarisan/enkapsulasi, logika algoritma, dan pengembangan aplikasi.',
+        useCases: [
+            'Menerapkan konsep Object-Oriented Programming (OOP) pada tugas kuliah dan aplikasi',
+            'Melatih logika pemrograman terstruktur dan pemecahan masalah'
+        ]
+    },
+    firebase: {
+        title: 'Firebase',
+        badge: 'BACKEND AS A SERVICE',
+        iconClass: 'firebase-icon',
+        iconHtml: '<i class="fa-solid fa-fire"></i>',
+        level: 70,
+        description: 'Platform pengembangan aplikasi dari Google yang menyediakan layanan autentikasi pengguna, database realtime, dan dukungan cloud untuk mempercepat pengembangan fitur aplikasi.',
+        useCases: [
+            'Mengelola autentikasi pengguna dan penyimpanan data aplikasi',
+            'Mendukung fitur sinkronisasi data secara praktis'
+        ]
+    },
+    kotlin: {
+        title: 'Kotlin',
+        badge: 'MOBILE DEVELOPMENT',
+        iconClass: 'kotlin-icon',
+        iconHtml: '<i class="fa-solid fa-k"></i>',
+        level: 72,
+        description: 'Bahasa pemrograman modern yang ringkas dan aman untuk pengembangan aplikasi Android native, dengan dukungan penuh terhadap komponen UI, navigasi, dan integrasi data.',
+        useCases: [
+            'Mengembangkan aplikasi mobile seperti marketplace barang bekas mahasiswa',
+            'Menghubungkan antarmuka aplikasi Android dengan layanan backend/database'
+        ]
+    },
+    nodejs: {
+        title: 'Node.js',
+        badge: 'RUNTIME ENVIRONMENT',
+        iconClass: 'node-icon',
+        iconHtml: '<i class="fa-brands fa-node"></i>',
+        level: 68,
+        description: 'Runtime environment berbasis JavaScript untuk menjalankan kode di sisi server, membangun API, mengelola dependensi proyek, dan mengembangkan aplikasi full-stack.',
+        useCases: [
+            'Menjalankan tooling pengembangan web modern dan skrip otomatisasi',
+            'Membangun layanan sisi server serta integrasi API berbasis JavaScript'
+        ]
+    },
+    figma: {
+        title: 'Figma',
+        badge: 'UI/UX & PROTOTYPING',
+        iconClass: 'figma-icon',
+        iconHtml: '<i class="fa-brands fa-figma"></i>',
+        level: 90,
+        description: 'Aplikasi desain antarmuka dan prototyping kolaboratif untuk merancang wireframe, design system, alur pengguna (user flow), serta prototype interaktif sebelum masuk tahap coding.',
+        useCases: [
+            'Merancang desain UI/UX kompetisi seperti proyek CERIA+ dan konsep SecondLife',
+            'Membuat wireframe, komponen desain, dan prototype alur aplikasi'
+        ]
+    }
+};
+
+const skillModal = document.getElementById('skillModal');
+const skillModalTitle = document.getElementById('skillModalTitle');
+const skillModalBadge = document.getElementById('skillModalBadge');
+const skillModalIcon = document.getElementById('skillModalIcon');
+const skillModalDesc = document.getElementById('skillModalDesc');
+const skillModalUseCases = document.getElementById('skillModalUseCases');
+const skillModalLevelText = document.getElementById('skillModalLevelText');
+const skillModalLevelBar = document.getElementById('skillModalLevelBar');
+
+function openSkillModal(skillKey) {
+    const data = skillsData[skillKey];
+    if (!data || !skillModal) return;
+
+    skillModalTitle.textContent = data.title;
+    skillModalBadge.textContent = data.badge;
+    skillModalIcon.className = `skill-modal-icon ${data.iconClass}`;
+    skillModalIcon.innerHTML = data.iconHtml;
+    skillModalDesc.textContent = data.description;
+    skillModalLevelText.textContent = `${data.level}%`;
+
+    skillModalUseCases.innerHTML = data.useCases
+        .map(item => `<li>${item}</li>`)
+        .join('');
+
+    skillModal.style.display = 'flex';
+    skillModalLevelBar.style.width = '0%';
+
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            skillModalLevelBar.style.width = `${data.level}%`;
+        });
+    });
+}
+
+function closeSkillModal() {
+    if (!skillModal) return;
+    skillModal.style.display = 'none';
+    if (skillModalLevelBar) skillModalLevelBar.style.width = '0%';
+}
+
+document.querySelectorAll('.skill-card[data-skill]').forEach(card => {
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+
+    card.addEventListener('click', () => {
+        openSkillModal(card.dataset.skill);
+    });
+
+    card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openSkillModal(card.dataset.skill);
+        }
+    });
+});
+
 window.addEventListener('click', (event) => {
-    const modal = document.getElementById('imageModal');
-    if (event.target === modal) closeImage();
+    const imageModal = document.getElementById('imageModal');
+    if (event.target === imageModal) closeImage();
+    if (event.target === skillModal) closeSkillModal();
 });
 
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeImage();
+    if (e.key === 'Escape') {
+        closeImage();
+        closeSkillModal();
+    }
 });
 
 /* ── Typing Effect ── */

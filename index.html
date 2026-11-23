@@ -28,6 +28,33 @@
         <img id="modalImage" class="modal-content" alt="Preview gambar">
     </div>
 
+    <div id="skillModal" class="skill-modal" role="dialog" aria-modal="true" aria-labelledby="skillModalTitle">
+        <div class="skill-modal-card">
+            <button type="button" class="skill-modal-close" onclick="closeSkillModal()" aria-label="Tutup pop-up">&times;</button>
+            <div class="skill-modal-header">
+                <div id="skillModalIcon" class="skill-modal-icon"></div>
+                <div>
+                    <span id="skillModalBadge" class="skill-modal-badge">FRAMEWORK</span>
+                    <h3 id="skillModalTitle">Nama Skill</h3>
+                </div>
+            </div>
+            <p id="skillModalDesc" class="skill-modal-desc"></p>
+            <div class="skill-modal-points">
+                <h4>Penerapan di Proyek</h4>
+                <ul id="skillModalUseCases"></ul>
+            </div>
+            <div class="skill-modal-level-wrap">
+                <div class="skill-modal-level-top">
+                    <span>Tingkat Kemahiran</span>
+                    <strong id="skillModalLevelText">0%</strong>
+                </div>
+                <div class="skill-modal-track">
+                    <div id="skillModalLevelBar" class="skill-modal-fill"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <nav>
         <button class="menu-toggle" aria-label="Buka menu navigasi" aria-expanded="false">
             <span></span><span></span><span></span>
@@ -161,7 +188,7 @@
             <div class="timeline-item reveal">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <span class="timeline-date">2024 - Sekarang</span>
+                    <span class="timeline-date">2023 - Sekarang</span>
                     <h3>Sistem Informasi - UPN "Veteran" Jawa Timur</h3>
                     <p>Fokus pada pengembangan perangkat lunak, arsitektur sistem informasi, dan web development full-stack.</p>
                     <div class="timeline-tags">
@@ -200,7 +227,7 @@
             <div class="timeline-item reveal">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <span class="timeline-date">2024 - sekarang</span>
+                    <span class="timeline-date">2024 - 2025</span>
                     <h3>Pengembangan Proyek Full-Stack</h3>
                     <p>Membangun aplikasi marketplace (Kotlin + Supabase), website Laravel dengan autentikasi, dan portofolio pribadi.</p>
                     <div class="timeline-tags">
@@ -228,7 +255,7 @@
     <section id="skills">
         <h2 class="left-align-title reveal">Technical Skills</h2>
         <div class="skills-grid">
-            <div class="skill-card reveal">
+            <div class="skill-card reveal" data-skill="javascript">
                 <div class="card-glow js-glow"></div>
                 <div class="icon-wrapper js-icon">
                     <i class="fa-brands fa-js"></i>
@@ -237,7 +264,7 @@
                 <p>Web Development</p>
                 <div class="skill-bar"><div class="skill-fill" data-level="85"></div></div>
             </div>
-            <div class="skill-card reveal">
+            <div class="skill-card reveal" data-skill="php">
                 <div class="card-glow php-glow"></div>
                 <div class="icon-wrapper php-icon">
                     <i class="fa-brands fa-php"></i>
@@ -246,7 +273,7 @@
                 <p>Backend Programming</p>
                 <div class="skill-bar"><div class="skill-fill" data-level="80"></div></div>
             </div>
-            <div class="skill-card reveal">
+            <div class="skill-card reveal" data-skill="tailwind">
                 <div class="card-glow tw-glow"></div>
                 <div class="icon-wrapper tw-icon">
                     <i class="fa-solid fa-wind"></i>
@@ -255,7 +282,7 @@
                 <p>UI Design & Layout</p>
                 <div class="skill-bar"><div class="skill-fill" data-level="88"></div></div>
             </div>
-            <div class="skill-card reveal">
+            <div class="skill-card reveal" data-skill="laravel">
                 <div class="card-glow laravel-glow"></div>
                 <div class="icon-wrapper laravel-icon">
                     <i class="fa-brands fa-laravel"></i>
@@ -264,7 +291,7 @@
                 <p>MVC Framework</p>
                 <div class="skill-bar"><div class="skill-fill" data-level="82"></div></div>
             </div>
-            <div class="skill-card reveal">
+            <div class="skill-card reveal" data-skill="mysql">
                 <div class="card-glow mysql-glow"></div>
                 <div class="icon-wrapper mysql-icon">
                     <i class="fa-solid fa-database"></i>
@@ -273,7 +300,7 @@
                 <p>Database Management</p>
                 <div class="skill-bar"><div class="skill-fill" data-level="78"></div></div>
             </div>
-            <div class="skill-card reveal">
+            <div class="skill-card reveal" data-skill="java">
                 <div class="card-glow java-glow"></div>
                 <div class="icon-wrapper java-icon">
                     <i class="fa-brands fa-java"></i>
@@ -282,7 +309,7 @@
                 <p>OOP & Desktop App</p>
                 <div class="skill-bar"><div class="skill-fill" data-level="75"></div></div>
             </div>
-            <div class="skill-card reveal">
+            <div class="skill-card reveal" data-skill="firebase">
                 <div class="card-glow firebase-glow"></div>
                 <div class="icon-wrapper firebase-icon">
                     <i class="fa-solid fa-fire"></i>
@@ -291,7 +318,7 @@
                 <p>Realtime DB & Auth</p>
                 <div class="skill-bar"><div class="skill-fill" data-level="70"></div></div>
             </div>
-            <div class="skill-card reveal">
+            <div class="skill-card reveal" data-skill="kotlin">
                 <div class="card-glow kotlin-glow"></div>
                 <div class="icon-wrapper kotlin-icon">
                     <i class="fa-solid fa-k"></i>
@@ -300,7 +327,7 @@
                 <p>Mobile Development</p>
                 <div class="skill-bar"><div class="skill-fill" data-level="72"></div></div>
             </div>
-            <div class="skill-card reveal">
+            <div class="skill-card reveal" data-skill="nodejs">
                 <div class="card-glow node-glow"></div>
                 <div class="icon-wrapper node-icon">
                     <i class="fa-brands fa-node"></i>
@@ -309,7 +336,7 @@
                 <p>Runtime Environment</p>
                 <div class="skill-bar"><div class="skill-fill" data-level="68"></div></div>
             </div>
-            <div class="skill-card reveal">
+            <div class="skill-card reveal" data-skill="figma">
                 <div class="card-glow figma-glow"></div>
                 <div class="icon-wrapper figma-icon">
                     <i class="fa-brands fa-figma"></i>
